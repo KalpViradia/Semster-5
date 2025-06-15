@@ -1,0 +1,1 @@
+String APPBAR_TITLE = 'MVC Car Static';
