@@ -14,6 +14,9 @@ class _DatabaseViewState extends State<DatabaseView> {
   final _genderController = TextEditingController();
 
   List<DatabaseModel> _users = [];
+  int? _editingUserId;
+
+  bool get _isEditing => _editingUserId != null;
 
   @override
   void initState() {
@@ -28,35 +31,42 @@ class _DatabaseViewState extends State<DatabaseView> {
     });
   }
 
-  Future<void> _addUser() async {
+  Future<void> _saveUser() async {
     if (_nameController.text.isEmpty || _cityController.text.isEmpty || _genderController.text.isEmpty) return;
 
-    final newUser = DatabaseModel(
+    final user = DatabaseModel(
+      uid: _editingUserId,
       name: _nameController.text,
       city: _cityController.text,
       gender: _genderController.text,
     );
 
-    await _controller.addUser(newUser);
+    if (_isEditing) {
+      await _controller.updateUser(user);
+    } else {
+      await _controller.addUser(user);
+    }
+
     _clearInputs();
-    _loadUsers();
+    await _loadUsers();
   }
 
   void _clearInputs() {
     _nameController.clear();
     _cityController.clear();
     _genderController.clear();
+    _editingUserId = null;
   }
 
   Future<void> _deleteUser(int uid) async {
     await _controller.deleteUser(uid);
-    _loadUsers();
+    await _loadUsers();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('User Database')),
+      appBar: AppBar(title: Text(APPBAR_TITLE)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -75,8 +85,8 @@ class _DatabaseViewState extends State<DatabaseView> {
             ),
             const SizedBox(height: 10),
             ElevatedButton(
-              onPressed: _addUser,
-              child: const Text('Add User'),
+              onPressed: _saveUser,
+              child: Text(_isEditing ? 'Update User' : 'Add User'),
             ),
             const Divider(),
             Expanded(
@@ -87,9 +97,25 @@ class _DatabaseViewState extends State<DatabaseView> {
                   return ListTile(
                     title: Text('${user.name} - ${user.city}'),
                     subtitle: Text('Gender: ${user.gender}'),
-                    trailing: IconButton(
-                      icon: const Icon(Icons.delete, color: Colors.red),
-                      onPressed: () => _deleteUser(user.uid!),
+                    trailing: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        IconButton(
+                          icon: const Icon(Icons.edit, color: Colors.blue),
+                          onPressed: () {
+                            setState(() {
+                              _editingUserId = user.uid;
+                              _nameController.text = user.name;
+                              _cityController.text = user.city;
+                              _genderController.text = user.gender;
+                            });
+                          },
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.delete, color: Colors.red),
+                          onPressed: () => _deleteUser(user.uid!),
+                        ),
+                      ],
                     ),
                   );
                 },
