@@ -1,1 +1,0 @@
-String APPBAR_TITLE = 'MVC Car';
