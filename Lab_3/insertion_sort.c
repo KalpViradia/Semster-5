@@ -47,8 +47,8 @@ void main() {
         end = clock();
         timeTaken = ((double)(end - start)) / CLOCKS_PER_SEC * 1000;
         printf("Time taken to sort the best case array is %f ms\n", timeTaken);
-        printf("Sorted Array: \n");
-        printArray(arr, N);
+        // printf("Sorted Array: \n");
+        // printArray(arr, N);
     }
     else {
         printf("Failed to read best case file");
