@@ -31,6 +31,7 @@ public class Prob2 {
 
         return res;
     }
+    
     public static void main(String[] args) {
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
