@@ -1,0 +1,1 @@
+String APPBAR_TITLE = 'GetX Non-Reactive Variables';
