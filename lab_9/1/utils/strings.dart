@@ -1,0 +1,13 @@
+String APPBAR_TITLE = 'SQLite Database';
+String MSG_NO_DATA = 'No students found.';
+String DB_NAME = 'Student.db';
+String TBL_STUDENT = 'Student';
+String COL_ID = 'id';
+String COL_NAME = 'name';
+String COL_ENROLLMENT_NUMBER = 'enrollment_number';
+String COL_GRADE_12 = 'grade_12';
+String COL_DIPLOMA_CGPA = 'diploma_cgpa';
+String COL_CURRENT_CGPA = 'current_cgpa';
+String COL_EMAIL = 'email';
+String COL_PHONE = 'phone';
+String COL_CITY = 'city';

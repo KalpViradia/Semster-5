@@ -1,0 +1,9 @@
+export 'package:flutter/material.dart';
+export 'package:get/get.dart';
+export 'package:sqflite/sqflite.dart';
+export 'package:path/path.dart';
+export 'package:advance_flutter_lab/lab_9/4/utils/strings.dart';
+export 'package:advance_flutter_lab/lab_9/4/models/sqlite_multiple_tables_model.dart';
+export 'package:advance_flutter_lab/lab_9/4/controllers/sqlite_multiple_tables_controller.dart';
+export 'package:advance_flutter_lab/lab_9/4/database/sqlite_multiple_tables_database.dart';
+export 'package:advance_flutter_lab/lab_9/4/views/add_student_view.dart';
