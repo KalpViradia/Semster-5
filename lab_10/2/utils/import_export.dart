@@ -1,0 +1,9 @@
+export 'package:flutter/material.dart';
+export 'package:get/get.dart';
+export 'package:sqflite/sqflite.dart';
+export 'package:path/path.dart';
+export 'package:advance_flutter_lab/lab_10/2/utils/strings.dart';
+export 'package:advance_flutter_lab/lab_10/2/controllers/sqlite_update_and_delete_controller.dart';
+export 'package:advance_flutter_lab/lab_10/2/database/sqlite_update_and_delete_database.dart';
+export 'package:advance_flutter_lab/lab_10/2/models/sqlite_update_and_delete_model.dart';
+export 'package:advance_flutter_lab/lab_10/2/views/sqlite_update_and_delete_form_view.dart';

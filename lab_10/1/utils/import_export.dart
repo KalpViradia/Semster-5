@@ -1,0 +1,9 @@
+export 'package:flutter/material.dart';
+export 'package:get/get.dart';
+export 'package:sqflite/sqflite.dart';
+export 'package:path/path.dart';
+export 'package:advance_flutter_lab/lab_10/1/utils/strings.dart';
+export 'package:advance_flutter_lab/lab_10/1/controllers/sqlite_insert_controller.dart';
+export 'package:advance_flutter_lab/lab_10/1/database/sqlite_insert_database.dart';
+export 'package:advance_flutter_lab/lab_10/1/models/sqlite_insert_model.dart';
+export 'package:advance_flutter_lab/lab_10/1/views/sqlite_insert_form_view.dart';
