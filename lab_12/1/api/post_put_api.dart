@@ -1,13 +1,19 @@
 import 'package:second/lab_12/1/utils/import_export.dart';
 
 class StudentPostPutApiService extends GetConnect {
-  final String baseUrl = 'https://66ed2084380821644cdb7fe9.mockapi.io/users';
+  final String baseUrl = 'https://66ed2084380821644cdb7fe9.mockapi.io/';
 
-  Future<Response> fetchStudents() => get(baseUrl);
+  @override
+  void onInit() {
+    httpClient.baseUrl = baseUrl;
+    allowAutoSignedCert = true;
+  }
+
+  Future<Response> fetchStudents() => get('users');
 
   Future<Response> addStudent(StudentPostPutModel student) =>
-      post(baseUrl, student.toJson());
+      post('users', student.toJson());
 
   Future<Response> updateStudent(String id, StudentPostPutModel student) =>
-      put('$baseUrl/$id', student.toJson());
+      put('users/$id', student.toJson());
 }
