@@ -1,7 +1,7 @@
-import 'package:advance_flutter_lab/utils/import_export.dart';
+import 'package:second/utils/import_export.dart';
 
 void main() {
-  Get.put(GetXRxListCrudController());
+  // Get.put(StudentDeleteApiController());
   runApp(const MyApp());
 }
 
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: GetXRxListCrudView(),
+      home: HandlingPermissionPage(),
 
       // For lab_5/3
       // initialRoute: '/home',
