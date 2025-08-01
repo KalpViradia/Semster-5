@@ -1,0 +1,5 @@
+Hello from Flutter!
+
+This is a sample file stored in external storage.
+
+Read successfully using GetX and permission_handler.
