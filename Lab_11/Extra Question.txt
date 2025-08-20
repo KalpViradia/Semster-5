@@ -1,0 +1,17 @@
+192.168.10.0/25:
+
+Subnet mask: 255.255.255.128
+Total addresses per subnet: 2^(32−25) = 128
+Usable hosts per subnet: 128 − 2 = 126
+
+1. 192.168.10.0/25
+Network: 192.168.10.0
+First usable: 192.168.10.1
+Last usable: 192.168.10.126
+Broadcast: 192.168.10.127
+
+2. 192.168.10.128/25
+Network: 192.168.10.128
+First usable: 192.168.10.129
+Last usable: 192.168.10.254
+Broadcast: 192.168.10.255
